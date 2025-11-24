@@ -1,3 +1,19 @@
-[gd_scene format=3 uid="uid://c0armb0lgy6gc"]
+[gd_scene load_steps=3 format=3 uid="uid://c0armb0lgy6gc"]
+
+[ext_resource type="Script" uid="uid://dkppm5ylptlyn" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c41auxx6t77b0" path="res://player.tscn" id="2_0xm2m"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_ig7tw")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
