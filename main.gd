@@ -1,5 +1,7 @@
 extends Node2D
 
+var score := 0
 
 func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	score += 1
+	$CanvasLayer/ScoreLabel.text = "Score: %d" % score

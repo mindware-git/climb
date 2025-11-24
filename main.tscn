@@ -7,12 +7,18 @@
 script = ExtResource("1_ig7tw")
 
 [node name="Timer" type="Timer" parent="."]
+autostart = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
-offset_right = 40.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -0.5
+offset_right = 0.5
 offset_bottom = 23.0
+grow_horizontal = 2
 
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
 

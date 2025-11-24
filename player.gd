@@ -27,5 +27,5 @@ func _process(delta: float) -> void:
 		velocity.x = - speed
 	elif is_right_pressed:
 		velocity.x = speed
-
+	velocity *= delta
 	move_and_slide()
