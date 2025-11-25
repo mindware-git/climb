@@ -2,7 +2,12 @@ extends CharacterBody2D
 
 var is_left_pressed: bool = false
 var is_right_pressed: bool = false
-@export var speed: float = 200.0
+@export var speed: float = 4000.0
+var vertical_speed: float = 1.0
+
+# 경계 상수
+const BOUNDARY_LEFT = 90.0
+const BOUNDARY_RIGHT = 630.0
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -27,5 +32,15 @@ func _process(delta: float) -> void:
 		velocity.x = - speed
 	elif is_right_pressed:
 		velocity.x = speed
-	velocity *= delta
+	velocity *= delta * vertical_speed
 	move_and_slide()
+	
+	# 경계 체크 - 플레이어가 허용 범위를 벗어나면 게임 오버
+	if position.x < BOUNDARY_LEFT or position.x > BOUNDARY_RIGHT:
+		game_over()
+
+func increase_vertical_speed() -> void:
+	vertical_speed += 1.0
+
+func game_over() -> void:
+	get_tree().change_scene_to_file("res://src/ending.tscn")

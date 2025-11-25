@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0armb0lgy6gc"]
+[gd_scene load_steps=5 format=3 uid="uid://c0armb0lgy6gc"]
 
 [ext_resource type="Script" uid="uid://dkppm5ylptlyn" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c41auxx6t77b0" path="res://player.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dvlek80g8vwc3" path="res://assets/DesertLayer3.png" id="3_h2yge"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_h2yge"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ig7tw")
@@ -20,6 +23,18 @@ offset_right = 0.5
 offset_bottom = 23.0
 grow_horizontal = 2
 
+[node name="Parallax2D" type="Parallax2D" parent="."]
+repeat_size = Vector2(0, 720)
+autoscroll = Vector2(0, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture = ExtResource("3_h2yge")
+
+[node name="Building" type="Sprite2D" parent="."]
+position = Vector2(360, 720)
+texture = SubResource("NoiseTexture2D_h2yge")
+
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
+position = Vector2(360, 1000)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
