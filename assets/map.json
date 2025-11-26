@@ -1,0 +1,88 @@
+{
+	"maps": [
+		{
+			"meter": 0,
+			"player_boundaries": {
+				"left": -360.0,
+				"right": 360.0
+			}
+		},
+		{
+			"meter": 5,
+			"obstacles": [
+				{
+					"position": 90.0,
+					"type": 0
+				},
+				{
+					"position": 360.0,
+					"type": 0
+				}
+			]
+		},
+		{
+			"meter": 10,
+			"obstacles": [
+				{
+					"position": 630.0,
+					"type": 0
+				},
+				{
+					"position": 360.0,
+					"type": 0
+				}
+			]
+		},
+		{
+			"meter": 12,
+			"obstacles": [
+				{
+					"position": 90.0,
+					"type": 0
+				},
+				{
+					"position": 360.0,
+					"type": 0
+				},
+				{
+					"position": 630.0,
+					"type": 0
+				}
+			]
+		},
+		{
+			"meter": 17,
+			"obstacles": [
+				{
+					"position": 90.0,
+					"type": 0
+				}
+			]
+		},
+		{
+			"meter": 18,
+			"obstacles": [
+				{
+					"position": 120.0,
+					"type": 0
+				}
+			]
+		},
+		{
+			"meter": 19,
+			"obstacles": [
+				{
+					"position": 150.0,
+					"type": 0
+				}
+			]
+		},
+		{
+			"meter": 30,
+			"player_boundaries": {
+				"left": 0.0,
+				"right": 0.0
+			}
+		}
+	]
+}

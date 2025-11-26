@@ -3,6 +3,9 @@ extends Node
 const RELEASE_SAVE_FILE_PATH = "user://gamedata.tres"
 const DEBUG_SAVE_FILE_PATH = "user://debug_gamedata.tres"
 
+const DRAW_DISTANCE_METER: int = 8
+const PIXEL_PER_METER: int = 100
+
 var save_path: String
 var game_data = GameData.new()
 

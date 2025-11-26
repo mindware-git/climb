@@ -14,7 +14,6 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	# 저장 파일 삭제
 	SaveManager.remove_save_file()
-	
 	# 메인 씬으로 이동
 	get_tree().change_scene_to_file("res://main.tscn")
 

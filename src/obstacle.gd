@@ -26,7 +26,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# 아래로 떨어지는 movement
-	position.y += speed * delta
+	position.y += speed * delta * SaveManager.game_data.horizontal_speed
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -54,7 +54,7 @@ func apply_horizontal_speed_bonus() -> void:
 	print("수평 속도 20% 증가! 현재 속도: ", SaveManager.game_data.horizontal_speed)
 
 func apply_life_bonus() -> void:
-	print("생명 +1! (추후 구현)")
+	SaveManager.game_data.life += 1
 
 func game_over() -> void:
 		# 여기에 게임 오버 로직 추가 가능
