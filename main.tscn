@@ -26,6 +26,8 @@ offset_bottom = 23.0
 
 [node name="Building" type="Node2D" parent="."]
 
+[node name="Obstacle" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource("2_0xm2m")]
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

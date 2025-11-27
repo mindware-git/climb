@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 var is_left_pressed: bool = false
 var is_right_pressed: bool = false
-var vertical_speed: float = 2000.0
-var horizontal_speed: float = 100.0
+var vertical_speed: float = 100.0
+var horizontal_speed: float = 2000.0
 
 # 경계 변수
 var boundary_left: float = -360
@@ -30,11 +30,11 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	velocity.x = 0
-	velocity.y = - horizontal_speed
+	velocity.y = - vertical_speed
 	if is_left_pressed:
-		velocity.x = - delta * vertical_speed
+		velocity.x = - delta * horizontal_speed
 	elif is_right_pressed:
-		velocity.x = delta * vertical_speed
+		velocity.x = delta * horizontal_speed
 	move_and_slide()
 	
 	# 경계 체크 - 플레이어가 허용 범위를 벗어나면 게임 오버
@@ -49,7 +49,10 @@ func apply_boundaries(left: float, right: float) -> void:
 	print("Player boundaries updated: left=", boundary_left, ", right=", boundary_right)
 
 func increase_vertical_speed() -> void:
-	vertical_speed *= 1.1
+	vertical_speed *= 1.2
+
+func increase_horizontal_speed() -> void:
+	horizontal_speed *= 1.2
 
 func game_over() -> void:
 	get_tree().change_scene_to_file("res://src/ending.tscn")
